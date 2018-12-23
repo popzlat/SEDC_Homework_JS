@@ -11,12 +11,20 @@ $(() => {
 
     // exercise 2
 
-    //  $(document).ready(function(){
-    //     $("#input01").focusout(function() { // focusout method to bind function
-    //       $(this).css("background-color", "#FFFFCC");
-    // });
-        
-    // });
+     $(document).ready(function(){
+        $(`#input01`).focus(function() {
+          $(`#input01`).val("This is focused here")
+    }).focusout(function(){
+        $(`#input01`).val( "")
+    })
+    });
+    $(document).ready(function(){
+        $(`#input02`).focus(function() {
+          $(`#input02`).val("This is focused here")
+    }).focusout(function(){
+        $(`#input02`).val( "")
+    })
+    });
     
     //   exercise 3
 
