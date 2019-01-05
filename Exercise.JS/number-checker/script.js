@@ -4,7 +4,7 @@
 //exercise 04  Number checker
 
 
-var num = $(`.numberInput`);
+let num = $(`.numberInput`).val();
 
 let  myNumber = {
     isEven  : function (num) {
@@ -18,32 +18,26 @@ let  myNumber = {
     }
  },
  
- isPositive  : function () {
+ isPositive  : function (num) {
 
-    let result;
+    
 
     if (num >= 0) {
-        result = " Positive";
-    } else if (num < 0) {
-        result = " Negative";
+        return" Positive";
+    }  if (num < 0) {
+       return " Negative";
     }
-    return result;
+    
 },
-numDigits : function (){
+numDigits : function (num){
     return num.toString().length;
 }
 }
 
-// function getNumberStats(number){
-//     document.write(myNumber.isEven());
-    
-//     document.write(myNumber.isPositive());
-//     document.write(myNumber.numDigits());
-// };
 
 $(document).ready(function(){
     $( ".btn" ).click(function() {
-       $("body").append(`<p> The Number${num}is a ${myNumber.numDigits(122)} its ${myNumber.isEven(122)}
-       and its a ${myNumber.isPositive(122)} </p>`);
+       $("body").append(`<p> The Number${num}is a ${myNumber.numDigits(num)} its ${myNumber.isEven(num)}
+       and its a ${myNumber.isPositive(num)} </p>`);
 
     })})
